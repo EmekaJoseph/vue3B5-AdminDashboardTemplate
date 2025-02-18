@@ -8,7 +8,9 @@
               <h3 class="text-center fw-bold">Login</h3>
               <div class="card border-0">
                 <div class="card-body">
-                  <div class="row g-3">
+
+                  <form class="row g-3 animate__animated animate__fadeIn">
+
                     <div class="col-12">
                       <div class="form-floating">
                         <input type="text" class="form-control" id="email_input" placeholder="" />
@@ -38,7 +40,7 @@
                       Dont have an account?
                       <router-link to="/register">Register</router-link>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>

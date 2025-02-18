@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg shadow-sm">
-    <div class="container">
+    <div class="container-md px-4">
       <span class="navbar-brand">
 
         <a class="btn border-0 btn-lg p-2 d-md-none" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"

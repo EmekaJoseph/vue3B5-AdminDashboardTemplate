@@ -10,7 +10,9 @@
               <h3 class="text-center fw-bold">Register</h3>
               <div class="card border-0">
                 <div class="card-body">
-                  <div class="row g-3">
+
+                  <form class="row g-3 animate__animated animate__fadeIn">
+
                     <div class="col-12">
                       <div class="form-floating">
                         <input type="text" class="form-control" id="email_input" placeholder="" />
@@ -38,16 +40,12 @@
                       </router-link>
                     </div>
 
-                    <div class="mt-4">
-                      Forgot password?
-                    </div>
-
 
                     <div class="mt-4 text-center">
-                      Already account?
+                      Already have an account?
                       <router-link to="/">Login</router-link>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
