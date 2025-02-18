@@ -6,7 +6,7 @@
           <div class="row min-vh-100 justify-content-center align-items-center">
             <div class="col-md-8">
               <h3 class="text-center fw-bold">Login</h3>
-              <div class="card border-0">
+              <div class="card border-0 ">
                 <div class="card-body">
 
                   <form class="row g-3 animate__animated animate__fadeIn">

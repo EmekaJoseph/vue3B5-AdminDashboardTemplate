@@ -9,9 +9,19 @@
         </a>
         Admin Template
       </span>
-      <span>
+      <div class="d-none d-md-block">
+        <span class="me-2">
+          <router-link class="btn btn-sm btn-custom rounded-4" to="/login">
+            Login
+          </router-link>
+        </span>
+        <span class="me-2">
+          <router-link class="btn btn-sm btn-outline-secondary rounded-4 bg-transparent text-muted" to="/register">
+            Register
+          </router-link>
+        </span>
         <ThemeToggler />
-      </span>
+      </div>
     </div>
   </nav>
 

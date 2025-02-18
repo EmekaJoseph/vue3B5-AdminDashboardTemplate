@@ -20,14 +20,14 @@ const templateStore = useTemplateStore()
 }
 
 body,
-.offcanvas {
-  background-color: var(--bs-component-bg) !important;
+.offcanvas,
+.card {
+  background-color: var(--bs-component-bg);
 }
 
 [data-bs-theme="dark"] {
   --bs-component-bg: #1f2948;
 }
-
 
 [data-bs-theme="light"] {
   --bs-component-bg: #fff;
