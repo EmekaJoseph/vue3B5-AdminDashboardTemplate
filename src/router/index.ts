@@ -20,17 +20,19 @@ const router = createRouter({
       component: () => import('../views/account/Layout/Layout.vue'),
       children: [
         { path: 'dashboard', name: 'Dashboard', meta: { name: 'Dashboard', }, alias: '/dashboard', component: () => import('../views/account/Dashboard.vue') },
+        { path: 'tables', name: 'Tables', meta: { name: 'Tables', }, alias: '/tables', component: () => import('../views/account/Tables/Tables.vue') },
+        { path: 'elements', name: 'Elements', meta: { name: 'Elements', }, alias: '/elements', component: () => import('../views/account/Elements/Elements.vue') },
+        { path: 'charts', name: 'Charts', meta: { name: 'Charts', }, alias: '/charts', component: () => import('../views/account/Charts/Charts.vue') },
+        { path: 'blank-page', name: 'Blank_Page', meta: { name: 'Blank Page', }, alias: '/blank-page', component: () => import('../views/account/Blank_Page.vue') },
       ],
     },
-
-
-
 
 
     {
       path: '/:pathMatch(.*)*',
       name: '404',
-      component: () => import(/* webpackChunkName: "public" */ '../views/auth/Login.vue')
+      redirect: '/',
+      // component: () => import(/* webpackChunkName: "public" */ '../views/auth/Login.vue')
     },
   ],
 })

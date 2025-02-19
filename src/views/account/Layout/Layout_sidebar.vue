@@ -1,10 +1,12 @@
 <template>
   <div class="sidebar ">
-
+    <Layout_menu />
   </div>
 </template>
 
 <script setup lang="ts">
+import Layout_menu from './Layout_menu.vue';
+
 
 
 </script>
@@ -19,6 +21,8 @@
   border-right: 1px solid #cccccc44;
   background-color: var(--sidebar-bg);
   overflow-y: auto;
+  padding-top: 100px;
+  overflow-x: hidden;
 }
 
 

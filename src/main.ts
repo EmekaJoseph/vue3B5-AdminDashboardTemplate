@@ -35,6 +35,8 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 import { Vue3ProgressPlugin } from '@marcoschulte/vue3-progress';
 import '@marcoschulte/vue3-progress/dist/index.css';
 
+import VueWriter from "vue-writer";
+
 import './assets/main.css'
 
 import { createApp } from 'vue'
@@ -55,6 +57,7 @@ app.use(createPinia())
 app.use(VueApexCharts);
 app.use(VueSweetalert2);
 app.use(Vue3ProgressPlugin);
+app.use(VueWriter);
 app.use(router)
 
 app.mount('#app')

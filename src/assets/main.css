@@ -1,4 +1,51 @@
 @import './base.css';
+@import './easy-data-table.css';
+
+
+
+[data-bs-theme="dark"] {
+  --dynamic-component: var(--dark-mode-component);
+  --dynamic-bg: var(--dark-mode-bg);
+  --navbar-bg:  var(--dark-mode-bg-lighter);
+  --text-dynamic: var(--vt-c-white);
+}
+
+[data-bs-theme="light"] {
+  --dynamic-component: var(--vt-c-white);
+  --dynamic-bg: var(--vt-c-white);
+  --navbar-bg: var(--vt-c-white);
+  --text-dynamic: var(--vt-c-black-soft);
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px !important;
+  background-color: var( --vt-c-white-mute) ;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e0e0e0 ;
+  border-radius: 5px ;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--button-color) ;
+  border-radius: 5px;
+  border: 2px solid var( --vt-c-white-mute) ;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--theme-color) !important;
+}
+
+.auth-image {
+  background: url('/images/design.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
 
 
 input,select,textarea{
@@ -18,8 +65,47 @@ button:focus,
  
 }
 
-
-
 .cursor-pointer{
     cursor: pointer;
 }
+
+body{
+  background-color: var( --dynamic-bg);
+}
+
+.offcanvas,
+.dropdown-menu,
+.card, .table>:not(caption)>*>* {
+  background-color: var( --dynamic-component);
+}
+
+.min-vh-50{
+  min-height: 50vh;
+}
+
+
+.text-dynamic{
+  color: var(--text-dynamic) !important;
+}
+
+.theme-color{
+  color: var(--theme-color);
+}
+
+.theme-bg{
+  background-color: var(--theme-color);
+}
+
+
+.btn-custom {
+  background-color: var( --button-color);
+  color: var(--vt-c-white) !important;
+  border: none !important;
+}
+
+.btn-custom:hover {
+  background-color: var(--theme-color);
+}
+
+
+
