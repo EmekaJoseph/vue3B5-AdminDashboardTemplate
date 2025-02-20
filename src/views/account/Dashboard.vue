@@ -1,8 +1,8 @@
 <template>
-
   <div class="row g-3">
-    <div v-for="i in 3" class="col-lg-4">
-      <div class="card shadow">
+    <div v-for="i in 3" class="col-lg-4 hover-tiltY">
+      <div class="card border-0 shadow-sm animate__animated animate__fadeIn"
+        :class="' animate__delay-' + (i - 1) + 's'">
         <div class="card-body">
           Information #{{ i }}
           <i class="float-end " :class="'bi bi-' + i + '-circle-fill'"> </i>
@@ -14,10 +14,10 @@
     </div>
 
     <div class="col-lg-8">
-      <div class="card h-100">
+      <div class="card h-100 animate__animated animate__slideInUp">
         <div class="card-header bg-transparent fw-bold border-0 py-3">
           Table
-          <button class="btn btn-sm btn-custom float-end">
+          <button class="btn btn-sm btn-custom float-end hover-tiltY">
             Action
           </button>
         </div>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="col-lg-4">
-      <div class="card h-100">
+      <div class="card h-100 animate__animated animate__slideInRight">
         <div class="card-body">
           <vue-writer :array="[`Vue-writer, A Vue 3 component that simulates typing, and erasing text. The content has to be in an array even if it's a single string.
             By default, this will loop forever unless you specify. the delay prop controls how long the current word in the array will appear on the screen before it deletes and begins typing the next word.

@@ -26,6 +26,7 @@ const route = useRoute()
 <style scoped>
 .content-div {
   margin-left: 250px;
+  overflow: hidden !important;
 }
 
 

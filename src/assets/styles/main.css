@@ -1,20 +1,24 @@
 @import './base.css';
-@import './easy-data-table.css';
+@import './customized/easy-data-table.css';
+@import './customized/date_picker.css';
+@import './customized/v-select.css';
 
 
 
 [data-bs-theme="dark"] {
-  --dynamic-component: var(--dark-mode-component);
   --dynamic-bg: var(--dark-mode-bg);
+  --dynamic-bg-component: var(--dark-mode-component);
+  --dynamic-color: var(--vt-c-white);
   --navbar-bg:  var(--dark-mode-bg-lighter);
-  --text-dynamic: var(--vt-c-white);
+  --sidebar-bg:  var(--dark-mode-bg);
 }
 
 [data-bs-theme="light"] {
-  --dynamic-component: var(--vt-c-white);
-  --dynamic-bg: var(--vt-c-white);
+  --dynamic-bg: var(--vt-c-white-soft);
+  --dynamic-bg-component: var(--vt-c-white);
+  --dynamic-color: var(--vt-c-black-soft);
   --navbar-bg: var(--vt-c-white);
-  --text-dynamic: var(--vt-c-black-soft);
+  --sidebar-bg: var(--vt-c-white);
 }
 
 
@@ -76,7 +80,7 @@ body{
 .offcanvas,
 .dropdown-menu,
 .card, .table>:not(caption)>*>* {
-  background-color: var( --dynamic-component);
+  background-color: var( --dynamic-bg-component);
 }
 
 .min-vh-50{
@@ -85,7 +89,7 @@ body{
 
 
 .text-dynamic{
-  color: var(--text-dynamic) !important;
+  color: var(--dynamic-color) !important;
 }
 
 .theme-color{
@@ -105,6 +109,24 @@ body{
 
 .btn-custom:hover {
   background-color: var(--theme-color);
+}
+
+.hover-tiltX {
+  transition: all ease-in-out 0.4s;
+}
+
+
+.hover-tiltX:hover {
+  transform: translateX(5px);
+}
+
+.hover-tiltY {
+  transition: all ease-in-out 0.4s;
+}
+
+
+.hover-tiltY:hover {
+  transform: translateY(-5px);
 }
 
 

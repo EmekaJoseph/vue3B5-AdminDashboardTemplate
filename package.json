@@ -14,19 +14,23 @@
   "dependencies": {
     "@marcoschulte/vue3-progress": "^0.0.7",
     "@vuepic/vue-datepicker": "^11.0.1",
+    "@vueup/vue-quill": "^1.2.0",
     "@vueuse/core": "^12.7.0",
     "animate.css": "^4.1.1",
     "apexcharts": "^4.4.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "maska": "^3.1.0",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "vue-select": "^4.0.0-beta.6",
     "vue-sweetalert2": "^5.0.11",
+    "vue-tel-input": "^9.3.0",
     "vue-writer": "^2.0.2",
     "vue3-apexcharts": "^1.8.0",
-    "vue3-easy-data-table": "^1.5.47"
+    "vue3-easy-data-table": "^1.5.47",
+    "vue3-otp-input": "^0.5.21"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",

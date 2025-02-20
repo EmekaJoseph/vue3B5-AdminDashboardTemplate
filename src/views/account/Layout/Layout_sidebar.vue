@@ -18,11 +18,17 @@ import Layout_menu from './Layout_menu.vue';
   left: 0;
   bottom: 0;
   width: 250px !important;
-  border-right: 1px solid #cccccc44;
+  border-right: 1px solid var(--bs-border-color);
   background-color: var(--sidebar-bg);
   overflow-y: auto;
   padding-top: 100px;
   overflow-x: hidden;
+}
+
+[data-bs-theme="light"] {
+  .sidebar {
+    border: none !important;
+  }
 }
 
 

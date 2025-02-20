@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg shadow-sm">
+  <nav class="navbar navbar-expand-lg shadow-sm sticky-top">
     <div class="container-fluid px-lg-3">
       <span class="navbar-brand">
 

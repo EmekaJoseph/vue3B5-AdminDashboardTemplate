@@ -1,0 +1,88 @@
+/* easytable loader */
+.lds-ring div {
+    border-color: var(--theme-color) transparent transparent transparent !important;
+  }
+  
+  
+  .vue3-easy-data-table__body{
+    min-height: 100vh;
+  }
+  
+  .vue3-easy-data-table, .vue3-easy-data-table__main.fixed-header,
+  .vue3-easy-data-table__footer{
+    background: transparent !important;
+    border: none !important;
+    
+  }
+  
+  
+  .vue3-easy-data-table__body td {
+    padding-block: 14px !important;
+    background: transparent !important;
+    color: var(--dynamic-color) !important;
+    border-color: var(--bs-border-color) !important;
+  }
+  
+  .vue3-easy-data-table__main.fixed-header th {
+    text-transform: uppercase;
+    font-weight: bold !important;
+    color: var(--dynamic-color) !important;
+    padding-block: 15px !important;
+    background: transparent !important;
+    border-color: var(--bs-border-color) !important;
+    
+  }
+  
+  .vue3-easy-data-table__footer {
+    border: none !important;
+    padding-block: 15px !important;
+    color: var(--dynamic-color) !important;
+  }
+
+  .easy-data-table__rows-selector .rows-input__wrapper {
+    border-color: var(--dynamic-color) !important; 
+}
+
+  .easy-data-table__rows-selector .rows-input__wrapper .triangle {
+    border-top: solid 6px var(--dynamic-color) !important;  
+}
+
+.easy-data-table__rows-selector ul.select-items li {
+  color: var(--dynamic-color) !important;
+  background-color: var(--dynamic-bg-component) !important;
+}
+
+/* .easy-data-table__rows-selector ul.select-items li.selected[data-v-4ca5de3a] {
+  color: #fff;
+  background-color: var(--1b889342);
+} */
+
+.easy-checkbox input[type=checkbox].allSelected+label:before, .easy-checkbox input[type=checkbox].partSelected+label:before, .easy-checkbox input[type=checkbox]:checked+label:before {
+  background: var(--theme-color) !important;
+  margin: 0px !important;
+}
+
+
+.loader-line:before {
+  background-color: var(--theme-color) !important;
+}
+
+
+.vue3-easy-data-table__loading-mask {
+  background-color: #111 !important;
+  opacity: .1 !important;
+}
+
+.vue3-easy-data-table__header th.sortable .sortType-icon {
+  border-bottom-color: var(--dynamic-color) !important;
+}
+
+.buttons-pagination .item.button.active {
+  background-color: var(--theme-color) !important;
+  border-left: var(--easy-table-buttons-pagination-border);
+  border: none!important;
+}
+
+.vue3-easy-data-table__message {
+  color: var(--bs-text-muted) !important;
+}
