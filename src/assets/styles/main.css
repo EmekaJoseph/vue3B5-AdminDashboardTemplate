@@ -1,7 +1,7 @@
 @import './base.css';
-@import './customized/easy-data-table.css';
-@import './customized/date_picker.css';
-@import './customized/v-select.css';
+@import './pluginsCustomized/easy-data-table.css';
+@import './pluginsCustomized/date_picker.css';
+@import './pluginsCustomized/v-select.css';
 
 
 
@@ -69,6 +69,16 @@ button:focus,
  
 }
 
+.form-check-input:checked {
+  background-color: var(--theme-color) !important;
+  border-color:  var(--theme-color);
+}
+
+.form-check-input[type=checkbox] {
+  width: 20px !important;
+  height: 20px !important;
+}
+
 .cursor-pointer{
     cursor: pointer;
 }
@@ -78,7 +88,7 @@ body{
 }
 
 .offcanvas,
-.dropdown-menu,
+/* .dropdown-menu, */
 .card, .table>:not(caption)>*>* {
   background-color: var( --dynamic-bg-component);
 }
@@ -92,24 +102,35 @@ body{
   color: var(--dynamic-color) !important;
 }
 
-.theme-color{
+.text-theme{
   color: var(--theme-color);
 }
 
-.theme-bg{
+.bg-theme{
   background-color: var(--theme-color);
 }
 
 
-.btn-custom {
+.btn-theme, .btn-theme:disabled {
   background-color: var( --button-color);
   color: var(--vt-c-white) !important;
   border: none !important;
 }
 
-.btn-custom:hover {
-  background-color: var(--theme-color);
+.btn-theme-outline, .btn-theme-outline:disabled {
+  border-color: var( --button-color);
+  color: var( --button-color) !important;
+  background: transparent;
 }
+
+
+.btn-theme:hover, .btn-theme-outline:hover {
+  background-color: var(--theme-color);
+  color: var(--vt-c-white) !important;
+}
+
+
+
 
 .hover-tiltX {
   transition: all ease-in-out 0.4s;
@@ -127,6 +148,30 @@ body{
 
 .hover-tiltY:hover {
   transform: translateY(-5px);
+}
+
+
+
+hr.faint {
+  height: 1px;
+  /* margin: 50px 0; */
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(0, 0, 0, 0)), color-stop(0.5, #333333), to(rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+  background: linear-gradient(left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
+  border: 0;
+}
+
+hr.faint:after {
+  display: block;
+  content: '';
+  /* height: 30px; */
+  background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 116, color-stop(0%, #cccccc), color-stop(100%, rgba(255, 255, 255, 0)));
+  background-image: -webkit-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -moz-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: -o-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: radial-gradient(farthest-side at center top, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 

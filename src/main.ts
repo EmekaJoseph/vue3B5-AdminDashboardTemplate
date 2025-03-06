@@ -48,6 +48,9 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import VueTelInput from 'vue-tel-input';
 import 'vue-tel-input/vue-tel-input.css';
 
+//https://michalsnik.github.io/aos/
+import "aos/dist/aos.css";
+
 import './assets/styles/main.css'
 
 import { createApp } from 'vue'
