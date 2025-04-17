@@ -3,6 +3,9 @@
 @import './pluginsCustomized/date_picker.css';
 @import './pluginsCustomized/v-select.css';
 
+@import './fontawesome-6.7.2/css/fontawesome.css';
+@import './fontawesome-6.7.2/css/brands.css';
+@import './fontawesome-6.7.2/css/solid.css';
 
 
 [data-bs-theme="dark"] {

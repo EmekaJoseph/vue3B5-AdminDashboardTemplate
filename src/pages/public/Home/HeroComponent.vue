@@ -10,6 +10,7 @@
                             <div class="text-white">
                                 {{ info }}
                             </div>
+
                             <button class="btn btn-light mt-3 rounded-4 py-2 text-theme hover-tiltX">
                                 Get Started now!
                             </button>

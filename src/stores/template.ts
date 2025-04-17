@@ -13,10 +13,10 @@ export const useTemplateStore = defineStore('template', () => {
 
   // Data
   const sidebarmenu = reactive([
-    { title: "Dashboard", icon: "<i class='bi bi-columns-gap'></i>", link: "/account/dashboard" },
-    { title: "Tables", icon: " <i class='bi bi-table'></i>", link: "/account/tables" },
-    { title: "Charts", icon: "<i class='bi bi-graph-up'></i>", link: "/account/charts" },
-    { title: "Elements", icon: "<i class='bi bi-diagram-2-fill'></i>", link: "/account/elements" },
+    { title: "Dashboard", icon: "<i class='fa fa-gauge'></i>", link: "/account/dashboard" },
+    { title: "Tables", icon: " <i class='fa fa-table-list'></i>", link: "/account/tables" },
+    { title: "Charts", icon: "<i class='fa fa-chart-pie'></i>", link: "/account/charts" },
+    { title: "Elements", icon: "<i class='fa fa-sitemap'></i>", link: "/account/elements" },
     { title: "Blank Page", icon: "<i class='bi bi-file-earmark'></i>", link: "/account/blank-page" },
     {
       title: "Dropdown",

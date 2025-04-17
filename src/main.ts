@@ -51,6 +51,9 @@ import 'vue-tel-input/vue-tel-input.css';
 //https://michalsnik.github.io/aos/
 import "aos/dist/aos.css";
 
+// https://www.npmjs.com/package/@fortawesome/fontawesome-free
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import './assets/styles/main.css'
 
 import { createApp } from 'vue'
