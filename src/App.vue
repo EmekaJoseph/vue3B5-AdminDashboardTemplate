@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { RouterView, useRoute } from 'vue-router';
-import { watch } from 'vue'
+import { watch, nextTick } from 'vue'
 
 // @ts-ignore
 import * as bootstrap from 'bootstrap'
@@ -15,22 +15,14 @@ const route = useRoute()
 // useIdleLogout()
 
 
-watch(() => [route.fullPath, /*templateStore.activateToolTip*/], () => {
-  setTimeout(() => {
-    // Destroy existing tooltips first
-    const existingTooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    existingTooltips.forEach(el => {
-      const tooltip = bootstrap.Tooltip.getInstance(el)
-      if (tooltip) tooltip.dispose()
-    })
-
-    // Re-initialize tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    tooltipTriggerList.forEach(el => {
-      new bootstrap.Tooltip(el)
-    })
-  }, 0)
-})
+watch(() => [route.fullPath, /*templateStore.activateToolTip*/], async () => {
+  await nextTick();
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+    const instance = bootstrap.Tooltip.getInstance(el);
+    if (instance) instance.dispose();
+    bootstrap.Tooltip.getOrCreateInstance(el);
+  });
+});
 
 
 </script>
