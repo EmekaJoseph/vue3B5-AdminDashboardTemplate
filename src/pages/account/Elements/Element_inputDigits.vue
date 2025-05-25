@@ -4,8 +4,9 @@
             Input digits (Maska)
         </div>
         <div class="card-body">
-            <input placeholder="0.00" type="text" v-model="money" class="form-control " v-maska data-maska="9,99#.##"
-                data-maska-tokens="9:[0-9]:repeated" data-maska-reversed />
+            <!-- <input placeholder="0.00" type="text" v-model="money" class="form-control " v-maska data-maska="9,99#.##"
+                data-maska-tokens="9:[0-9]:repeated" data-maska-reversed /> -->
+            <CustomNumberField v-model="money" />
         </div>
     </div>
 </template>
@@ -13,6 +14,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { vMaska } from "maska/vue"
+import CustomNumberField from '@/components/customNumberField.vue';
 
 const money = ref<string>('')
 
