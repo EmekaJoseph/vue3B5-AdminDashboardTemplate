@@ -1,9 +1,10 @@
 <template>
-    <div ref="tooltipParent" :class="{ 'form-floating': formFloating }" class="position-relative">
-        <input :id="id" :placeholder="dynamicPlaceholder" type="text" :value="modelValue" @input="handleOnInput"
-            @focus="showTooltip" @blur="hideTooltip" class="form-control w-100" :class="className" v-maska
-            :data-maska="moneyFormat ? '9,99#.##' : '9#'" data-maska-tokens="9:[0-9]:repeated" data-maska-reversed />
-        <label v-if="formFloating" :for="id">{{ placeholder }}</label>
+    <div ref="tooltipParent" :class="{ 'form-floating': floatLabel }" class="position-relative">
+        <input :disabled="disabled" :id="id" :placeholder="dynamicPlaceholder" type="text" :value="modelValue"
+            @input="handleOnInput" @focus="showTooltip" @blur="hideTooltip" class="form-control w-100"
+            :class="className" v-maska :data-maska="moneyFormat ? '9,99#.##' : '9,99#'"
+            data-maska-tokens="9:[0-9]:repeated" data-maska-reversed />
+        <label v-if="floatLabel" :for="id">{{ placeholder }}</label>
         <div v-if="showTooltipFlag && numberCategory && tooltip" class="tooltip bs-tooltip-auto fade show"
             role="tooltip" :style="tooltipPosition" ref="tooltipElement">
             <div class="tooltip-arrow"></div>
@@ -22,8 +23,9 @@ const props = defineProps({
     placeholder: String,
     id: { type: String, default: 'fieldId' },
     moneyFormat: { type: Boolean, default: true },
-    formFloating: { type: Boolean, default: false },
+    floatLabel: { type: Boolean, default: false },
     tooltip: { type: Boolean, default: true },
+    disabled: { type: Boolean, default: false },
 });
 
 const emit = defineEmits(['update:modelValue']);

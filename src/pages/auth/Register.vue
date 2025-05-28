@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="col-12">
-                      <CustomNumberField :is-form-floating="true" placeholder="Enter Phone" :is-money-format="false" />
+                      <CustomNumberField :float-label="true" placeholder="Enter Phone" :money-format="false" />
                     </div>
 
                     <div class="col-12">

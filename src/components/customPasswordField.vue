@@ -1,9 +1,8 @@
 <template>
-
-    <div class="form-floating password-field ">
-        <input :type="isPasswordVisible ? 'text' : 'password'" class="form-control w-100" :id="id" :class="className"
+    <div class="password-field " :class="{ 'form-floating': floatLabel }">
+        <input :type="isPasswordVisible ? 'text' : 'password'" class="form-control w-100" :id :class="className"
             :value="modelValue" @input="emitValue" :placeholder :aria-label="placeholder" />
-        <label :for="id">{{ placeholder }}</label>
+        <label v-if="floatLabel" :for="id">{{ placeholder }}</label>
 
         <span @click="isPasswordVisible = !isPasswordVisible" class="icon"
             :title="isPasswordVisible ? 'Hide password' : 'Show password'">
@@ -11,27 +10,21 @@
             <i v-else class="bi bi-eye"></i>
         </span>
     </div>
-
-    <!-- <span class="password-field">
-        <input :type="isPasswordVisible ? 'text' : 'password'" class="form-control w-100" :class="className"
-            :value="modelValue" @input="emitValue" :placeholder="placeholder" :aria-label="placeholder" />
-
-        <span @click="isPasswordVisible = !isPasswordVisible" class="icon"
-            :title="isPasswordVisible ? 'Hide password' : 'Show password'">
-            <i v-if="!isPasswordVisible" class="bi bi-eye-slash"></i>
-            <i v-else class="bi bi-eye"></i>
-        </span>
-    </span> -->
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+
+const id = ref<string>('');
+onMounted(() => {
+    id.value = `input-${Math.random().toString(36).slice(2, 10)}`;
+});
 
 defineProps({
     modelValue: String,
     className: { type: String, default: '' },
     placeholder: { type: String, default: 'Enter password' },
-    id: { type: String, default: 'fieldId' },
+    floatLabel: { type: Boolean, default: true },
 });
 
 const emit = defineEmits(['update:modelValue'])

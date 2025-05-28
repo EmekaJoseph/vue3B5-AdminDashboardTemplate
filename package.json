@@ -31,6 +31,7 @@
     "vue-writer": "^2.0.2",
     "vue3-apexcharts": "^1.8.0",
     "vue3-carousel": "^0.14.0",
+    "vue3-dropzone": "^2.2.1",
     "vue3-easy-data-table": "^1.5.47",
     "vue3-otp-input": "^0.5.21"
   },
