@@ -21,6 +21,7 @@
     "apexcharts": "^4.4.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "jspdf": "^3.0.1",
     "maska": "^3.1.0",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",

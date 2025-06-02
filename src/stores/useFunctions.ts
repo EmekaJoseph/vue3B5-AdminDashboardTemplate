@@ -3,11 +3,18 @@ import Swal from 'sweetalert2'
 import { useDateFormat, useOnline, useTimeAgo } from '@vueuse/core';
 import { createPopper, type VirtualElement } from '@popperjs/core'
 
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+
 type DebounceFunction<T extends (...args: any[]) => any> = (...args: Parameters<T>) => void;
 
 
 export default {
 
+    isEmailFormat: (email: string) => {
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email)
+    },
 
     isExtension: (fileName: string, requiredFormats: string[]) => {
         const regex = new RegExp('[^.]+$');
@@ -31,6 +38,19 @@ export default {
         } else {
             return str;
         }
+    },
+
+    addWeekdaysToDate(startDate: Date, days: number) {
+        let count = 0;
+        const currentDate = new Date(startDate);
+        while (count < days) {
+            currentDate.setDate(currentDate.getDate() + 1);
+            // Skip weekends (Saturday AND Sunday)
+            if (currentDate.getDay() !== 0 && currentDate.getDay() !== 6) {
+                count++;
+            }
+        }
+        return currentDate;
     },
 
     toast: (text: string, icon: 'warning' | 'success' | 'error' | 'info') => {
@@ -265,5 +285,97 @@ export default {
 
         // Return input unchanged if it's already valid Base64
         return input;
-    }
+    },
+
+    async shareSite(title: string, text: string, url: string) {
+        try {
+            await navigator.share({ title, text, url })
+        } catch (err) {
+            console.log(err)
+        }
+    },
+
+
+    excelDateToJSDate(serial: any) {
+        const utc_days = Math.floor(serial - 25569);
+        const utc_value = utc_days * 86400;
+        const date_info = new Date(utc_value * 1000);
+
+        const fractional_day = serial - Math.floor(serial) + 0.0000001;
+
+        let total_seconds = Math.floor(86400 * fractional_day);
+
+        const seconds = total_seconds % 60;
+
+        total_seconds -= seconds;
+
+        const hours = Math.floor(total_seconds / (60 * 60));
+        const minutes = Math.floor(total_seconds / 60) % 60;
+
+        return new Date(date_info.getFullYear(), date_info.getMonth(), date_info.getDate(), hours, minutes, seconds);
+    },
+
+
+    async downloadPDF(ref: any, fileName: string) {
+        const element = ref;
+
+        const fixedWidth = 800; // Adjust based on your content
+        element.style.width = `${fixedWidth}px`;
+        element.style.overflow = 'hidden';
+        element.style.position = 'absolute';
+        element.style.left = '0';
+        element.style.top = '0';
+
+
+        const canvas = await html2canvas(element, {
+            scale: 2,
+            width: fixedWidth,
+            windowWidth: fixedWidth,
+            logging: true,
+            useCORS: true,
+            scrollX: 0,
+            scrollY: 0
+        });
+
+        // PDF settings (A4 portrait: 210mm x 297mm)
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pageWidth = pdf.internal.pageSize.getWidth() - 20; // 20mm margin
+        const pageHeight = pdf.internal.pageSize.getHeight() - 20;
+
+        // Calculate scaling
+        const scaleFactor = pageWidth / canvas.width;
+        const imgWidth = canvas.width * scaleFactor;
+        const imgHeight = canvas.height * scaleFactor;
+
+        // Multi-page logic (from your original code)
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        // First page
+        pdf.addImage(
+            canvas.toDataURL('image/png'),
+            'PNG',
+            10, // Left margin
+            10, // Top margin
+            imgWidth,
+            imgHeight
+        );
+        heightLeft -= pageHeight;
+
+        // Additional pages if needed
+        while (heightLeft >= 0) {
+            pdf.addPage();
+            position = heightLeft - imgHeight;
+            pdf.addImage(
+                canvas.toDataURL('image/png'),
+                'PNG',
+                10,
+                position + 40, // Adjust for margin
+                imgWidth,
+                imgHeight
+            );
+            heightLeft -= pageHeight;
+        }
+        pdf.save(`${fileName}-${new Date().getTime()}.pdf`);
+    },
 }
