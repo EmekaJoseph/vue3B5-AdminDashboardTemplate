@@ -378,4 +378,17 @@ export default {
         }
         pdf.save(`${fileName}-${new Date().getTime()}.pdf`);
     },
+
+
+    generateCode: (digits: number = 4, withNumbers: boolean = true, withSpecialCharacters: boolean = false) => {
+        let charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        if (withNumbers) charset += '0123456789';
+        if (withSpecialCharacters) charset += '!@#$%^&*()';
+
+        let result = '';
+        for (let i = 0; i < digits; i++) {
+            result += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        return result;
+    }
 }
